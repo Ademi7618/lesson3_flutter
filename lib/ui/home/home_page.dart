@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lesson02_flutter/data/api_service/coutry_api_service.dart';
-import 'package:lesson02_flutter/ui/home/bloc/get_country_bloc.dart';
-import 'package:lesson02_flutter/ui/home/bloc/get_contry_event.dart';
-import 'package:lesson02_flutter/ui/home/bloc/get_country_state.dart';
+import 'package:lesson02_flutter/ui/home/bloc_home/get_country_bloc.dart';
+import 'package:lesson02_flutter/ui/home/bloc_home/get_contry_event.dart';
+import 'package:lesson02_flutter/ui/home/bloc_home/get_country_state.dart';
 import 'package:lesson02_flutter/ui/home/detail/weather_page.dart';
 
 class HomePage extends StatelessWidget {
