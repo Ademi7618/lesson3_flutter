@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lesson02_flutter/data/api_service/coutry_api_service.dart';
-import 'package:lesson02_flutter/ui/home/bloc_home/get_country_bloc.dart';
-import 'package:lesson02_flutter/ui/home/home_page.dart';
+import 'package:lesson02_flutter/api/crypto_api_service.dart';
+import 'package:lesson02_flutter/bloc1/crypto_bloc.dart';
+import 'package:lesson02_flutter/model/crypto_repository.dart';
+import 'package:lesson02_flutter/ui/crypto_screen.dart';
 
 void main() {
-  runApp(const MyApp());
-}
+  final repository = CryptoRepository(CryptoApiService());
+  final bloc = CryptoBloc(repository);
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (_) => GetCountryBloc(CoutryApiService()),
-        child: const HomePage(),
-      ),
-    );
-  }
+  runApp(MaterialApp(
+    home: CryptoScreen(bloc: bloc),
+  ));
 }
